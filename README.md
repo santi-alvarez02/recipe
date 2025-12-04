@@ -1,6 +1,6 @@
 # Recipe 3D App
 
-An immersive 3D recipe application inspired by [jesse-zhou.com](https://jesse-zhou.com).
+An immersive 3D recipe application
 
 ## Quick Start
 

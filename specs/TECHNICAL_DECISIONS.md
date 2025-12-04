@@ -36,3 +36,32 @@
 - Catch errors early in 3D code (vector operations, material properties)
 - Better IDE autocomplete for Three.js API
 - Type-safe props for R3F components
+
+## 2025-12-04: Visual Style Transformation
+**Decision:** Transform from realistic modern to flat vector illustration (cartoon) style
+**Rationale:**
+- **Unique identity** - Stands out from typical 3D web experiences
+- **Better performance** - MeshToonMaterial is simpler than Standard/Physical materials
+- **Matches brand** - Recipe app benefits from approachable, illustrated aesthetic
+- **Inspired by success** - Jesse Zhou's Ramen Shop showed power of stylization
+- **User preference** - Client requested modern minimalist cartoon vibe
+**Alternatives considered:**
+- Keep realistic (rejected: too generic, harder to make unique)
+- Extreme cartoon/anime style (rejected: too childish for professional app)
+- Photorealistic with ray tracing (rejected: performance nightmare on web)
+**Implementation:**
+- MeshToonMaterial with 3-tone gradient maps for cel-shading
+- Drei's Outlines component for black strokes (0.025 thickness)
+- Simplified lighting (fewer lights, clearer shadows)
+- White highlights replace complex reflections/transmission
+- Maintain white/cream color palette
+**Expected benefits:**
+- 10-15% FPS improvement (simpler materials)
+- Unique visual identity (illustrated cookbook aesthetic)
+- Better mobile performance
+- Easier to maintain and iterate
+**Trade-offs:**
+- Loss of realistic material depth (acceptable for style)
+- Outline scaling needs attention at different zoom levels
+- Requires custom gradient map creation
+**See:** `specs/STYLE_TRANSFORMATION.md` and `specs/features/CARTOON_STYLE_GUIDE.md`
